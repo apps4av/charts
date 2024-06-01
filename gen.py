@@ -5,8 +5,6 @@ import re
 from bs4 import BeautifulSoup
 import zipfile
 from tqdm import tqdm
-import numpy
-from osgeo import gdal  # install gdal bins first
 
 
 def list_crawl(url, match):
