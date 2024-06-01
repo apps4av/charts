@@ -27,7 +27,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         sudo apt-get install gdal-bin python3-gdal
-        pip install bs4 tqdm numpy regex urllib3 glob
+        pip install bs4 tqdm numpy regex urllib3 glob2
     - name: Build charts
       run: |
         python3 gen.py
