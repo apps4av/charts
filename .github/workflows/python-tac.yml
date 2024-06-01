@@ -28,4 +28,4 @@ jobs:
         pip install bs4 tqdm numpy regex urllib3 glob2
     - name: Build charts
       run: |
-        python3 gen.py
+        python3 tac.py

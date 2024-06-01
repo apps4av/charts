@@ -6,8 +6,8 @@ RUN apt install python3 python3-pip gdal-bin python3-gdal -y
 
 WORKDIR /tmp/
 
-COPY gen.py /tmp/
+COPY tac.py /tmp/
 COPY *.geojson /tmp/
 RUN ls /tmp/
 
-CMD ["python3", "gen.py"]
+CMD ["python3", "tac.py"]

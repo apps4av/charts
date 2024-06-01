@@ -179,20 +179,3 @@ def zip_files(list_of_all_tiles, chart):
 
 def make_tiles(name, index, max_zoom):
     os.system("gdal2tiles.py -t " + name + " --tilesize=512 --tiledriver=WEBP --webp-quality=60 --exclude --webviewer=all -c MUAVLLC --no-kml --resume --processes 8 -z 0-" + max_zoom + " -r near " + name + ".vrt tiles/" + index)
-
-
-# Chart specific code
-
-# download
-all_charts = list_crawl("https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/", "^http.*_TAC.zip$")
-download_list(all_charts)
-all_files = get_files("*TAC.tif")
-
-# make tiles
-vrts = make_vrt_list(all_files)
-make_main_vrt("TAC", vrts)
-make_tiles("TAC", "1", "11")
-
-# zip
-all_tiles = glob.glob("tiles/1/**/*.webp", recursive=True)
-zip_files(all_tiles, "TAC")
