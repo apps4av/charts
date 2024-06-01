@@ -178,4 +178,5 @@ def zip_files(list_of_all_tiles, chart):
 
 
 def make_tiles(name, index, max_zoom):
+    os.system("rm -rf tiles/" + index)
     os.system("gdal2tiles.py -t " + name + " --tilesize=512 --tiledriver=WEBP --webp-quality=60 --exclude --webviewer=all -c MUAVLLC --no-kml --resume --processes 8 -z 0-" + max_zoom + " -r near " + name + ".vrt tiles/" + index)
