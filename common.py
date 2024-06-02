@@ -86,7 +86,8 @@ def make_vrt_list(charts, rgb, chart_type):
 
 
 def get_files(match):
-    return glob.glob(match)
+    list_files = glob.glob("*.geojson", root_dir=match)
+    return [gg.replace(".geojson", ".tif") for gg in list_files]
 
 
 def zip_files(list_of_all_tiles, chart):

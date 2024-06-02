@@ -10,7 +10,7 @@ import cycle
 start_date = cycle.get_version_start(cycle.get_cycle_download())  # to download which cycle
 all_charts = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/", "^http.*" + start_date + ".*_TAC.zip$")
 common.download_list(all_charts)
-all_files = common.get_files("*FLY.tif")
+all_files = common.get_files("FLY")
 # make tiles
 vrts = common.make_vrt_list(all_files, True,"FLY")
 common.make_main_vrt(vrts,"FLY")

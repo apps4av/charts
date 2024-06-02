@@ -13,14 +13,10 @@ all_charts_2 = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/ae
 all_charts_3 = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr/", "^http.*" + start_date + "/enr_p.*.zip$")
 for nn in all_charts_2:
     all_charts.append(nn)
-for nn in all_charts_3: # P charts should be in the start so they can be overwritten
-    all_charts.insert(0, nn)
+for nn in all_charts_3:
+    all_charts.insert(nn)
 common.download_list(all_charts)
-all_files = common.get_files("ENR_*.tif")
-# remove unused stuff
-all_files.remove("ENR_AKH01_SEA.tif")
-all_files.remove("ENR_P01_GUA.tif")
-all_files.remove("ENR_H12.tif")
+all_files = common.get_files("ENR_H")
 # P charts to get overwritten, ZKZK: Fix this by fixing geojson of P01
 all_files.sort(reverse=True)
 # make tiles

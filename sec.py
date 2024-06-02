@@ -13,12 +13,7 @@ all_charts_2 = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/ae
 for nn in all_charts_2:
     all_charts.append(nn)
 common.download_list(all_charts)
-all_files = common.get_files("*SEC.tif")
-all_files_2 = common.get_files("*VFR Chart.tif")
-for nn in all_files_2:
-    all_files.append(nn)
-# remove unused stuff
-all_files.remove("Honolulu Inset SEC.tif")
+all_files = common.get_files("SEC")
 
 # make tiles
 vrts = common.make_vrt_list(all_files, True, "SEC")

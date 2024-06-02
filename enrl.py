@@ -13,15 +13,7 @@ all_charts_2 = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/ae
 for nn in all_charts_2:
     all_charts.append(nn)
 common.download_list(all_charts)
-all_files = common.get_files("ENR_*L*.tif")
-# ZKZK: Fix north part of AKL04 geojson
-# remove unused stuff
-all_files.remove("ENR_L21.tif")
-all_files.remove("ENR_AKL01_JNU.tif")
-all_files.remove("ENR_AKL01_VR.tif")
-all_files.remove("ENR_AKL04_ANC.tif")
-all_files.remove("ENR_AKL03_OME.tif")
-all_files.remove("ENR_AKL03_FAI.tif")
+all_files = common.get_files("ENR_L")
 # make tiles
 vrts = common.make_vrt_list(all_files, False, "ENR_L")
 common.make_main_vrt(vrts,"ENR_L")
