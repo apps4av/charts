@@ -2,6 +2,8 @@ import glob
 import os
 import urllib.request
 import re
+from subprocess import check_call
+
 from bs4 import BeautifulSoup
 import zipfile
 from tqdm import tqdm
@@ -54,7 +56,7 @@ def make_main_vrt(vrt_list, chart_type):
         pass
 
     all_vrts = "".join([" '" + vrt + "' " for vrt in vrt_list])
-    os.system("gdalbuildvrt -r cubicspline -srcnodata 51 -vrtnodata 51 -resolution highest -overwrite " + name + all_vrts)
+    check_call(["gdalbuildvrt -r cubicspline -srcnodata 51 -vrtnodata 51 -resolution highest -overwrite " + name + all_vrts], shell=True)
 
 
 def make_vrt(name, chart_type):
@@ -65,9 +67,8 @@ def make_vrt(name, chart_type):
     except FileNotFoundError as e:
         pass
 
-    os.system("gdal_translate -of vrt -r cubicspline -expand rgb '" + name + "' '" + no_extension_name + "rgb.vrt'")
-    os.system(
-        "gdalwarp -of vrt -r cubicspline -dstnodata 51 -t_srs 'EPSG:3857' -cutline '" + chart_type + "/" + no_extension_name + ".geojson' " + "-crop_to_cutline '" + no_extension_name + "rgb.vrt' '" + no_extension_name + ".vrt'")
+    check_call(["gdal_translate -of vrt -r cubicspline -expand rgb '" + name + "' '" + no_extension_name + "rgb.vrt'"], shell=True)
+    check_call(["gdalwarp -of vrt -r cubicspline -dstnodata 51 -t_srs 'EPSG:3857' -cutline '" + chart_type + "/" + no_extension_name + ".geojson' " + "-crop_to_cutline '" + no_extension_name + "rgb.vrt' '" + no_extension_name + ".vrt'"], shell=True)
 
     return no_extension_name + ".vrt"
 
@@ -203,5 +204,5 @@ def zip_files(list_of_all_tiles, chart):
 
 
 def make_tiles(index, max_zoom, chart_type):
-    os.system("rm -rf tiles/" + index)
-    os.system("gdal2tiles.py -t " + chart_type + " --tilesize=512 --tiledriver=WEBP --webp-quality=60 --exclude --webviewer=all -c MUAVLLC --no-kml --resume --processes 8 -z 0-" + max_zoom + " -r near " + chart_type + ".vrt tiles/" + index)
+    check_call(["rm -rf tiles/" + index], shell=True)
+    check_call(["gdal2tiles.py -t " + chart_type + " --tilesize=512 --tiledriver=WEBP --webp-quality=60 --exclude --webviewer=all -c MUAVLLC --no-kml --resume --processes 8 -z 0-" + max_zoom + " -r near " + chart_type + ".vrt tiles/" + index], shell=True)
