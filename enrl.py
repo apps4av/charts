@@ -14,6 +14,7 @@ for nn in all_charts_2:
     all_charts.append(nn)
 common.download_list(all_charts)
 all_files = common.get_files("ENR_*L*.tif")
+# ZKZK: Fix north part of AKL04 geojson
 # remove unused stuff
 all_files.remove("ENR_L21.tif")
 all_files.remove("ENR_AKL01_JNU.tif")
