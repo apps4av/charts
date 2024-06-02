@@ -58,7 +58,7 @@ def make_main_vrt(vrt_list, chart_type):
 
 
 def make_vrt(name, chart_type):
-    no_extension_name = name.split(".")[0]
+    no_extension_name = os.path.splitext(name)[0]
     try:
         os.remove(no_extension_name + ".vrt")
         os.remove(no_extension_name + "rgb.vrt")
