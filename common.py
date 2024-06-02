@@ -59,7 +59,7 @@ def make_main_vrt(vrt_list, chart_type):
     check_call(["gdalbuildvrt -r cubicspline -srcnodata 51 -vrtnodata 51 -resolution highest -overwrite " + name + all_vrts], shell=True)
 
 
-def make_vrt(name, chart_type):
+def make_vrt(name, rgb, chart_type):
     no_extension_name = os.path.splitext(name)[0]
     try:
         os.remove(no_extension_name + ".vrt")
@@ -67,16 +67,21 @@ def make_vrt(name, chart_type):
     except FileNotFoundError as e:
         pass
 
-    check_call(["gdal_translate -of vrt -r cubicspline -expand rgb '" + name + "' '" + no_extension_name + "rgb.vrt'"], shell=True)
-    check_call(["gdalwarp -of vrt -r cubicspline -dstnodata 51 -t_srs 'EPSG:3857' -cutline '" + chart_type + "/" + no_extension_name + ".geojson' " + "-crop_to_cutline '" + no_extension_name + "rgb.vrt' '" + no_extension_name + ".vrt'"], shell=True)
+    # used for VFR charts
+    if rgb:
+        check_call(["gdal_translate -of vrt -r cubicspline -expand rgb '" + name + "' '" + no_extension_name + "rgb.vrt'"], shell=True)
+        check_call(["gdalwarp -of vrt -r cubicspline -dstnodata 51 -t_srs 'EPSG:3857' -cutline '" + chart_type + "/" + no_extension_name + ".geojson' " + "-crop_to_cutline '" + no_extension_name + "rgb.vrt' '" + no_extension_name + ".vrt'"], shell=True)
+    # used for IFR charts
+    else:
+        check_call(["gdalwarp -of vrt -r cubic -dstnodata 51 -t_srs 'EPSG:3857' -cutline '" + chart_type + "/" + no_extension_name + ".geojson' " + "-crop_to_cutline '" + name + "' '" + no_extension_name + ".vrt'"], shell=True)
 
     return no_extension_name + ".vrt"
 
 
-def make_vrt_list(charts, chart_type):
+def make_vrt_list(charts, rgb, chart_type):
     ret = []
     for cc in tqdm(range(len(charts)), desc="Making VRT files"):
-        ret.append(make_vrt(charts[cc], chart_type))
+        ret.append(make_vrt(charts[cc], rgb, chart_type))
     return ret
 
 

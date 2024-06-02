@@ -21,7 +21,7 @@ for nn in all_files_2:
 all_files.remove("Honolulu Inset SEC.tif")
 
 # make tiles
-vrts = common.make_vrt_list(all_files, "SEC")
+vrts = common.make_vrt_list(all_files, True, "SEC")
 common.make_main_vrt(vrts, "SEC")
 common.make_tiles("0", "10", "SEC")
 

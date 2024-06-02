@@ -12,7 +12,7 @@ all_charts = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/aero
 common.download_list(all_charts)
 all_files = common.get_files("*FLY.tif")
 # make tiles
-vrts = common.make_vrt_list(all_files, "FLY")
+vrts = common.make_vrt_list(all_files, True,"FLY")
 common.make_main_vrt(vrts,"FLY")
 common.make_tiles("13", "11", "FLY")
 

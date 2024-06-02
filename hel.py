@@ -25,7 +25,7 @@ all_files.remove("Washington Inset HEL.tif")
 all_files.remove("Downtown Manhattan HEL.tif")
 all_files.remove("Grand Canyon Air Tour Operators.tif")
 # make tiles
-vrts = common.make_vrt_list(all_files, "HEL")
+vrts = common.make_vrt_list(all_files, True, "HEL")
 common.make_main_vrt(vrts, "HEL")
 common.make_tiles("9", "12", "HEL")
 

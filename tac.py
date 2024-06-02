@@ -13,7 +13,7 @@ common.download_list(all_charts)
 all_files = common.get_files("*TAC.tif")
 
 # make tiles
-vrts = common.make_vrt_list(all_files, "TAC")
+vrts = common.make_vrt_list(all_files, True, "TAC")
 common.make_main_vrt(vrts,"TAC")
 common.make_tiles("1", "11", "TAC")
 
