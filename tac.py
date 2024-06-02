@@ -13,9 +13,9 @@ common.download_list(all_charts)
 all_files = common.get_files("*TAC.tif")
 
 # make tiles
-vrts = common.make_vrt_list(all_files)
-common.make_main_vrt("TAC", vrts)
-common.make_tiles("TAC", "1", "11")
+vrts = common.make_vrt_list(all_files, "TAC")
+common.make_main_vrt(vrts,"TAC")
+common.make_tiles("1", "11", "TAC")
 
 # zip
 all_tiles = glob.glob("tiles/1/**/*.webp", recursive=True)

@@ -46,17 +46,18 @@ def download_list(charts):
         download(charts[cc])
 
 
-def make_main_vrt(name, vrt_list):
+def make_main_vrt(vrt_list, chart_type):
+    name = chart_type + ".vrt"
     try:
-        os.remove(name + ".vrt")
+        os.remove(name)
     except FileNotFoundError as e:
         pass
 
     all_vrts = "".join([" '" + vrt + "' " for vrt in vrt_list])
-    os.system("gdalbuildvrt -r cubicspline -srcnodata 51 -vrtnodata 51 -resolution highest -overwrite " + name + ".vrt " + all_vrts)
+    os.system("gdalbuildvrt -r cubicspline -srcnodata 51 -vrtnodata 51 -resolution highest -overwrite " + name + all_vrts)
 
 
-def make_vrt(name):
+def make_vrt(name, chart_type):
     no_extension_name = name.split(".")[0]
     try:
         os.remove(no_extension_name + ".vrt")
@@ -66,15 +67,15 @@ def make_vrt(name):
 
     os.system("gdal_translate -of vrt -r cubicspline -expand rgb '" + name + "' '" + no_extension_name + "rgb.vrt'")
     os.system(
-        "gdalwarp -of vrt -r cubicspline -dstnodata 51 -t_srs 'EPSG:3857' -cutline '" + no_extension_name + ".geojson' " + "-crop_to_cutline '" + no_extension_name + "rgb.vrt' '" + no_extension_name + ".vrt'")
+        "gdalwarp -of vrt -r cubicspline -dstnodata 51 -t_srs 'EPSG:3857' -cutline '" + chart_type + "/" + no_extension_name + ".geojson' " + "-crop_to_cutline '" + no_extension_name + "rgb.vrt' '" + no_extension_name + ".vrt'")
 
     return no_extension_name + ".vrt"
 
 
-def make_vrt_list(charts):
+def make_vrt_list(charts, chart_type):
     ret = []
     for cc in tqdm(range(len(charts)), desc="Making VRT files"):
-        ret.append(make_vrt(charts[cc]))
+        ret.append(make_vrt(charts[cc], chart_type))
     return ret
 
 
@@ -177,6 +178,6 @@ def zip_files(list_of_all_tiles, chart):
     se_file.close()
 
 
-def make_tiles(name, index, max_zoom):
+def make_tiles(index, max_zoom, chart_type):
     os.system("rm -rf tiles/" + index)
-    os.system("gdal2tiles.py -t " + name + " --tilesize=512 --tiledriver=WEBP --webp-quality=60 --exclude --webviewer=all -c MUAVLLC --no-kml --resume --processes 8 -z 0-" + max_zoom + " -r near " + name + ".vrt tiles/" + index)
+    os.system("gdal2tiles.py -t " + chart_type + " --tilesize=512 --tiledriver=WEBP --webp-quality=60 --exclude --webviewer=all -c MUAVLLC --no-kml --resume --processes 8 -z 0-" + max_zoom + " -r near " + chart_type + ".vrt tiles/" + index)
