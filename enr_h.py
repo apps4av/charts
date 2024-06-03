@@ -14,7 +14,7 @@ all_charts_3 = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/ae
 for nn in all_charts_2:
     all_charts.append(nn)
 for nn in all_charts_3:
-    all_charts.insert(nn)
+    all_charts.apped(nn)
 common.download_list(all_charts)
 all_files = common.get_files("ENR_H")
 # P charts to get overwritten, ZKZK: Fix this by fixing geojson of P01
