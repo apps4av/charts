@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Python application
+name: HEL
 
 on:
   pull_request:
@@ -29,3 +29,17 @@ jobs:
     - name: Build charts
       run: |
         python3 hel.py
+
+    - name: Upload release
+      uses: actions/upload-artifact@v4
+      with:
+        name: HEL
+        path: |
+          AK_*.zip
+          HI_*.zip
+          NW_*.zip
+          SW_*.zip
+          NC_*.zip
+          SC_*.zip
+          NE_*.zip
+          SE_*.zip
