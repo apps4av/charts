@@ -26,4 +26,4 @@ common.make_tiles("4", "9", "ENR_H")
 
 # zip
 all_tiles = glob.glob("tiles/4/**/*.webp", recursive=True)
-common.zip_files(all_tiles, "ENR_H")
+common.zip_charts(all_tiles, "ENR_H")

@@ -36,10 +36,11 @@ jobs:
         name: TAC
         path: |
           AK_*.zip
-          HI_*.zip
+          PAC_*.zip
           NW_*.zip
           SW_*.zip
           NC_*.zip
+          EC_*.zip
           SC_*.zip
           NE_*.zip
           SE_*.zip
