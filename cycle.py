@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 
 
 def get_cycle():
-    return "2405"
+    return "2406"
 
 
 def get_cycle_download():
