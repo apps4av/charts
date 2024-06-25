@@ -14,7 +14,7 @@ def get_cycle_download():
 
 Then create a PR on cycle.py. The builds will start for all charts.
 
-** FAA chart locations
+# FAA chart locations
 https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr/
 
 https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/
