@@ -2,11 +2,11 @@ from datetime import datetime, timedelta
 
 # change this
 def get_cycle():
-    return "2405"
+    return "2407"
 
 # change this
 def get_cycle_download():
-    return "2405" 
+    return "2407" 
 
 
 def get_first_date(year):
