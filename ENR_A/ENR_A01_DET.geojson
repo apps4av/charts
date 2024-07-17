@@ -3,6 +3,11 @@
 "name": "Detroit SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Detroit SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -9332981,5281056 ], [ -9212987,5278981 ], [ -9211206,5148102 ], [ -9331561,5148556 ], [ -9332981,5281056 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Detroit SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -9332981, 5281056 ],
+ [ -9212987, 5278981 ],
+ [ -9211206, 5148102 ],
+ [ -9331561, 5148556 ],
+ [ -9332981, 5281056 ] ] ] } }
 ]
 }

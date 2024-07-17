@@ -3,6 +3,10 @@
 "name": "Washington SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Washington SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [-8726402,4941196 ], [ -8305073,4933922 ], [ -8315660,4592606 ], [ -8723858,4595159 ], [ -8726402,4941196 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Washington SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -8726402, 4941196 ],
+ [ -8305073, 4933922 ],
+ [ -8315660, 4592606 ],
+ [ -8723858, 4595159 ],
+ [ -8726402, 4941196 ] ] ] } }
 ]
 }

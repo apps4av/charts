@@ -3,6 +3,11 @@
 "name": "Seattle SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Seattle SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -10134143,4760341 ], [ -9990046,4757975 ], [ -9990223,4612525 ], [ -10133849,4612320 ], [ -10134143,4760341 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Seattle SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -10134143, 4760341 ],
+ [ -9990046, 4757975 ],
+ [ -9990223, 4612525 ],
+ [ -10133849, 4612320 ],
+ [ -10134143, 4760341 ] ] ] } }
 ]
 }

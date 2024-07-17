@@ -3,7 +3,12 @@
 "name": "Atlanta SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Atlanta SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -9459627, 4044894 ], [ -9332299,4043656 ], [ -9331453,3913109 ], [ -9458008,3912188 ], [ -9459627, 4044894 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Atlanta SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -9459627, 4044894 ],
+ [ -9332299, 4043656 ],
+ [ -9331453, 3913109 ],
+ [ -9458008, 3912188 ],
+ [ -9459627, 4044894 ] ] ] } }
 ]
 }
 

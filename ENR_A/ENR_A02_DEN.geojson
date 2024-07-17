@@ -3,6 +3,11 @@
 "name": "Denver SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Denver SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -11742006,4930706 ], [ -11564650,4937585 ], [ -11566217,4760089 ], [ -11737657,4756700 ], [ -11742006,4930706 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Denver SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -11742006, 4930706 ],
+ [ -11564650, 4937585 ],
+ [ -11566217, 4760089 ],
+ [ -11737657, 4756700 ],
+ [ -11742006, 4930706 ] ] ] } }
 ]
 }

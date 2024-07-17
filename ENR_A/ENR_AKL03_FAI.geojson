@@ -3,6 +3,11 @@
 "name": "Fairbanks SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Fairbanks SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -16724819,9698409 ], [ -16140741,9699689 ], [ -16148722,9270286 ], [ -16702093,9273880 ], [ -16724819,9698409 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Fairbanks SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -16724819, 9698409 ],
+ [ -16140741, 9699689 ],
+ [ -16148722, 9270286 ],
+ [ -16702093, 9273880 ],
+ [ -16724819, 9698409 ] ] ] } }
 ]
 }

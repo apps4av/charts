@@ -3,6 +3,11 @@
 "name": "Twin Cities SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Twin Cities SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -10483424,5705221 ], [ -10266260,5703732 ], [ -10269472,5490248 ], [ -10474512,5492537 ], [ -10483424,5705221 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Twin Cities SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -10483424, 5705221 ],
+ [ -10266260, 5703732 ],
+ [ -10269472, 5490248 ],
+ [ -10474512, 5492537 ],
+ [ -10483424, 5705221 ] ] ] } }
 ]
 }
