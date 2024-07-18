@@ -3,6 +3,11 @@
 "name": "Los Angeles SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Los Angeles SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -13250457,4110897 ], [ -13020709,4077516 ], [ -13041751,3957169 ], [ -13266878,3994823 ], [ -13250457,4110897 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Los Angeles SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -13250457, 4110897 ],
+ [ -13020709, 4077516 ],
+ [ -13041751, 3957169 ],
+ [ -13266878, 3994823 ],
+ [ -13250457, 4110897 ] ] ] } }
 ]
 }

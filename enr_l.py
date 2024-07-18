@@ -16,6 +16,10 @@ common.download_list(all_charts)
 all_files = common.get_files("ENR_L")
 # make tiles
 vrts = common.make_vrt_list(all_files, False, "ENR_L")
+
+## Order for stacking sequence
+vrts.sort()
+
 common.make_main_vrt(vrts,"ENR_L")
 common.make_tiles("3", "10", "ENR_L")
 

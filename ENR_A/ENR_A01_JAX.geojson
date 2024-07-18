@@ -3,6 +3,11 @@
 "name": "Jacksonville SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Jacksonville SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -9146535,3631394 ], [ -9021279,3628947 ], [ -9020520,3496195 ], [ -9147909,3496283 ], [ -9146535,3631394 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Jacksonville SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -9146535, 3631394 ],
+ [ -9021279, 3628947 ],
+ [ -9020520, 3496195 ],
+ [ -9147909, 3496283 ],
+ [ -9146535, 3631394 ] ] ] } }
 ]
 }

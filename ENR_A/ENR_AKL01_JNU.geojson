@@ -3,6 +3,11 @@
 "name": "Juneau SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Juneau SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -15114276,8431353 ], [ -14747402,8001549 ], [ -15094868,7694638 ], [-15473467,8093222], [ -15114276,8431353 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Juneau SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -15114276, 8431353 ],
+ [ -14747402, 8001549 ],
+ [ -15094868, 7694638 ],
+ [ -15473467, 8093222 ],
+ [ -15114276, 8431353 ] ] ] } }
 ]
 }

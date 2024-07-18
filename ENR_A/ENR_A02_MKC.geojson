@@ -3,6 +3,11 @@
 "name": "Kansas City SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Kansas City SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -10587088,4808069 ], [ -10464853,4809582 ], [ -10463937,4680849 ], [ -10589944,4682381 ], [ -10587088,4808069  ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Kansas City SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -10587088, 4808069 ],
+ [ -10464853, 4809582 ],
+ [ -10463937, 4680849 ],
+ [ -10589944, 4682381 ],
+ [ -10587088, 4808069 ] ] ] } }
 ]
 }

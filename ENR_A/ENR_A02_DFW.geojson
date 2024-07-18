@@ -1,8 +1,13 @@
 {
 "type": "FeatureCollection",
-"name": "Dallas-Ft Worth SEC.tif",
+"name": "Dallas -Ft Worth SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Dallas-Ft Worth SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -10929446,4004417 ], [ -10690904,4002974 ], [ -10692794,3688773 ], [ -10930978,3684533 ], [-10929446,4004417 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Dallas -Ft Worth SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -10929446, 4004417 ],
+ [ -10690904, 4002974 ],
+ [ -10692794, 3688773 ],
+ [ -10930978, 3684533 ],
+ [ -10929446, 4004417 ] ] ] } }
 ]
 }

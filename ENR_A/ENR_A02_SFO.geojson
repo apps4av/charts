@@ -3,6 +3,11 @@
 "name": "San Francisco SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "San Francisco SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -13686155,4627161 ], [ -13541288,4625985 ], [ -13544677,4483560 ], [ -13684912,4482791 ], [ -13686155,4627161 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "San Francisco SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -13686155, 4627161 ],
+ [ -13541288, 4625985 ],
+ [ -13544677, 4483560 ],
+ [ -13684912, 4482791 ],
+ [ -13686155, 4627161 ] ] ] } }
 ]
 }

@@ -3,6 +3,11 @@
 "name": "Chicago SEC.tif",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "location": "Chicago SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -9872513,5365499 ], [ -9712979,5364095 ], [ -9712709,5056995 ], [ -9867066,5055996 ], [ -9872513,5365499 ] ] ] } }
+{ "type": "Feature", "properties": { "location": "Chicago SEC.tif" }, "geometry": { "type": "Polygon", "coordinates": [ [
+ [ -9872513, 5365499 ],
+ [ -9712979, 5364095 ],
+ [ -9712709, 5056995 ],
+ [ -9867066, 5055996 ],
+ [ -9872513, 5365499 ] ] ] } }
 ]
 }

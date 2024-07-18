@@ -144,4 +144,6 @@ def zip_charts(list_of_all_tiles, chart):
 
 def make_tiles(index, max_zoom, chart_type):
     check_call(["rm -rf tiles/" + index], shell=True)
-    check_call(["gdal2tiles.py -t " + chart_type + " --tilesize=512 --tiledriver=WEBP --webp-quality=60 --exclude --webviewer=all -c MUAVLLC --no-kml --resume --processes 8 -z 0-" + max_zoom + " -r near " + chart_type + ".vrt tiles/" + index], shell=True)
+    call = "gdal2tiles.py -t " + chart_type + " --tilesize=512 --tiledriver=WEBP --webp-quality=60 --exclude --webviewer=all -c MUAVLLC --no-kml --resume --processes 8 -z 0-" + max_zoom + " -r near " + chart_type + ".vrt tiles/" + index
+    print(f'Making tiles with call: {call}')
+    check_call([call], shell=True)
