@@ -6,10 +6,10 @@ import cycle
 
 # Chart specific code
 
-# download add second entry for caribbean charts
+# download
 start_date = cycle.get_version_start(cycle.get_cycle_download())  # to download which cycle
-all_charts = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/", "^http.*" + start_date + "/Caribbean/.*.zip$")
-all_charts_2 = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/", "^http.*" + start_date + "/sectional-files/.*.zip$")
+all_charts = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/", "^http.*" + start_date + "/sectional-files/.*.zip$")
+all_charts_2 = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/", "^http.*" + start_date + "/Caribbean/.*.zip$")
 for nn in all_charts_2:
     all_charts.append(nn)
 common.download_list(all_charts)
