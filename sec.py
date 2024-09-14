@@ -15,11 +15,6 @@ for nn in all_charts_2:
 common.download_list(all_charts)
 all_files = common.get_files("SEC")
 
-# Caribbean charts are WAC, hence add them at start so they do not overlay the SEC charts
-new_files = [x for x in all_files if not x.startswith("Caribbean")]
-caribbean_files = [x for x in all_files if x.startswith("Caribbean")]
-all_files = caribbean_files + new_files
-
 # make tiles
 vrts = common.make_vrt_list(all_files, True, "SEC")
 common.make_main_vrt(vrts, "SEC")
