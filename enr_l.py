@@ -10,7 +10,10 @@ import cycle
 start_date = cycle.get_version_start(cycle.get_cycle_download())  # to download which cycle
 all_charts = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr/", "^http.*" + start_date + "/enr_l.*.zip$")
 all_charts_2 = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr/", "^http.*" + start_date + "/enr_akl.*.zip$")
+all_charts_3 = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr/", "^http.*" + start_date + "/enr_p.*.zip$")
 for nn in all_charts_2:
+    all_charts.append(nn)
+for nn in all_charts_3:
     all_charts.append(nn)
 common.download_list(all_charts)
 all_files = common.get_files("ENR_L")
