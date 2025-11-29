@@ -12,6 +12,13 @@ import cycle
 import projection
 
 
+def is_in(area, lon, lat):
+    x_u, y_u, x_l, y_l = area
+    if lat <= y_u and lat >= y_l and lon >= x_u and lon <= x_l:
+        return True
+    return False
+
+
 def list_crawl(url, match):
     charts = []
     html_page = urllib.request.urlopen(url)
@@ -119,15 +126,11 @@ def zip_charts(list_of_all_tiles, chart):
         y_tile = int(tokens[len(tokens) - 1].split(".")[0])
         x_tile = int(tokens[len(tokens) - 2])
         z_tile = int(tokens[len(tokens) - 3])
-        lon_min, lat_max, lon_max, lat_min = projection.findBounds(x_tile, y_tile, z_tile)
+        lon_tile, lat_tile, lon1_tile, lat1_tile = projection.findBounds(x_tile, y_tile, z_tile)
 
         # include zoom 7 and below in every chart
         for count in range(len(regions)):
-            region_lon_min, region_lat_max, region_lon_max, region_lat_min = region_coordinates[count]
-            # Check if tile overlaps region anywhere
-            lon_overlap = lon_max >= region_lon_min and lon_min <= region_lon_max
-            lat_overlap = lat_max >= region_lat_min and lat_min <= region_lat_max
-            if (lon_overlap and lat_overlap) or z_tile <= 7:
+            if is_in(region_coordinates[count], lon_tile, lat_tile) or z_tile <= 7:
                 zip_files[count].write(tile)
                 manifest_files[count].write(tile + "\n")
 
