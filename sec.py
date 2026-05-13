@@ -1,5 +1,6 @@
 import common
 import glob
+import os
 
 import cycle
 
@@ -15,7 +16,7 @@ for nn in all_charts_2:
 common.download_list(all_charts)
 all_files = common.get_files("SEC")
 
-mv 'Washington Sec.tif' 'Washington SEC.tif'
+os.rename('Washington Sec.tif', 'Washington SEC.tif')
 
 # make tiles
 vrts = common.make_vrt_list(all_files, True, "SEC")
