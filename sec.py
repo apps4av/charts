@@ -15,6 +15,8 @@ for nn in all_charts_2:
 common.download_list(all_charts)
 all_files = common.get_files("SEC")
 
+mv 'Washington Sec.tif' 'Washington SEC.tif'
+
 # make tiles
 vrts = common.make_vrt_list(all_files, True, "SEC")
 common.make_main_vrt(vrts, "SEC")
