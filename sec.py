@@ -1,9 +1,6 @@
 import common
 import glob
-import os
-
 import cycle
-
 
 # Chart specific code
 
@@ -14,9 +11,7 @@ all_charts_2 = common.list_crawl("https://www.faa.gov/air_traffic/flight_info/ae
 for nn in all_charts_2:
     all_charts.append(nn)
 common.download_list(all_charts)
-os.rename('Washington Sec.tif', 'Washington SEC.tif')
 all_files = common.get_files("SEC")
-
 
 # make tiles
 vrts = common.make_vrt_list(all_files, True, "SEC")
